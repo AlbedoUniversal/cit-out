@@ -78,45 +78,179 @@ div.container {
 
 header.header div.logo {
   position: absolute;
-  top: 39px;
-  left: 0;
+  top: RelativeSize(50);
+  left: RelativeSize(103);
+  z-index: 10;
+  @media (max-width: 900px) {
+    top: RelativeSizeMob(30);
+    height: 55px;
+    img {
+      height: 100%;
+    }
+  }
+  @media (min-width: 900px) {
+    top: RelativeSizeMob(25);
+    left: 0;
+  }
+  @media (min-width: 1300px) {
+    top: RelativeSize(55);
+  }
 }
 
-.is-visible {
-  display: block;
-  opacity: 1;
-
-  animation: fadeInFromNone 3s ease-in-out;
+@media (max-width: 900px) {
+  .header {
+    overflow: hidden;
+    max-width: 100vw;
+    #burgerButtonMobile {
+      display: none;
+    }
+  }
+  .mobile-menu__btn {
+    position: absolute;
+    top: RelativeSizeMob(30);
+    right: RelativeSizeMob(20);
+    z-index: 10;
+    .checkbox-label {
+      cursor: pointer;
+      &::before {
+        display: block;
+        content: ".";
+        color: transparent;
+        width: 42px;
+        height: 42px;
+        background-image: url(../img/burger-menu.png);
+        background-position: center center;
+        background-size: cover;
+      }
+    }
+  }
 }
 
-@keyframes fadeInFromNone {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  1% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: block;
-    opacity: 1;
+@media (max-width: 900px) {
+  .checkbox-menu-mobile:checked ~ .burger-menu {
+    right: 0;
   }
 }
 
 header.header {
-  height: 118px;
+  height: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 8;
+}
+
+.siteHeader {
+  height: 100%;
+  position: relative;
+  height: 480px;
+  max-width: calc(100vw - RelativeSize(103));
+  margin-left: RelativeSize(103);
+  margin-bottom: 50px;
+  background-image: url("/img/top-bg-building.png");
+  background-color: black;
+  background-position: left top;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  @media (min-width: 1400px) {
+    height: RelativeSize(700);
+  }
+  @media (min-width: 1200px) {
+    height: 390;
+  }
+  @media (max-width: 900px) {
+    height: RelativeSizeMob(373);
+    width: 100%;
+    max-width: initial;
+    margin-left: 0;
+    // margin-left: RelativeSizeMob(62);
+    // max-width: calc(100vw - RelativeSizeMob(62));
+    background-position: 0% top;
+    margin-bottom: RelativeSizeMob(75);
+  }
+  .h1 {
+    text-transform: uppercase;
+    font-size: RelativeSize(50);
+    font-family: "RadiateSans-BoldExpanded", serif;
+    font-weight: 400;
+    @media (max-width: 1300px) {
+      font-size: RelativeSize(70);
+    }
+    @media (max-width: 900px) {
+      font-size: RelativeSizeMob(30);
+      line-height: 120%;
+      margin-left: RelativeSize(103);
+    }
+  }
+  .h2 {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: RelativeSize(30);
+    font-family: "Radiate Sans", sans-serif;
+    font-weight: 400;
+    @media (max-width: 1300px) {
+      font-size: RelativeSize(40);
+    }
+    @media (max-width: 900px) {
+      font-size: RelativeSizeMob(23);
+      margin-left: RelativeSize(103);
+    }
+  }
+  .button-know-more {
+    left: RelativeSize(192);
+    top: 465px;
+    position: absolute;
+    font-family: "SF UI Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: RelativeSize(22);
+    line-height: 160%;
+    text-align: center;
+
+    @media (min-width: 1400px) {
+      height: RelativeSize(700);
+      top: RelativeSize(678);
+    }
+    @media (max-width: 900px) {
+      top: initial;
+      bottom: RelativeSizeMob(-10);
+      font-size: RelativeSize(40);
+      left: RelativeSize(270);
+    }
+    a {
+      background-color: #ca103d;
+      color: #fff;
+      text-transform: uppercase;
+      padding: RelativeSize(16) RelativeSize(40);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: #a10f34;
+        transition: background-color 0.3s;
+      }
+      @media (max-width: 900px) {
+        padding: RelativeSize(30) RelativeSize(100);
+      }
+    }
+  }
 }
 
 // -----------ESLEEEM-------------------
+
+#burgerButtonMobile {
+  display: none;
+}
 
 @media (min-width: 900px) {
   .burger-menu {
     position: absolute;
     top: 42px;
-    right: 25%;
+    right: RelativeSize(500);
     display: flex;
     font-size: RelativeSize(15);
     height: fit-content;
@@ -127,6 +261,9 @@ header.header {
     font-size: RelativeSize(15);
     line-height: 130%;
     text-align: center;
+    @media (max-width: 1300px) {
+      right: RelativeSize(300);
+    }
 
     a {
       text-decoration: none;
@@ -169,6 +306,7 @@ header.header {
 
     &__btn {
       .checkbox-label {
+        cursor: pointer;
         &::before {
           display: block;
           content: ".";
@@ -182,7 +320,96 @@ header.header {
       }
     }
   }
-} // -----------ESLEEEM-------------------
+}
+
+@media (max-width: 900px) {
+  .burger-menu {
+    transition: right 0.3s ease-out;
+    width: 100vw;
+    top: 0;
+    right: -110%;
+    position: absolute;
+    background-color: #1e1e1e;
+    border-radius: 0px 0px 0px 40px;
+    font-family: "SF UI Display", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    text-align: center;
+    display: grid;
+    justify-items: flex-end;
+
+    div:last-child {
+      order: -1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .checkbox-menu {
+      display: none;
+    }
+    &__screen {
+      gap: RelativeSize(25);
+      margin-right: 25px;
+      transition: all 0.3s;
+
+      &--first {
+        display: none;
+        flex-direction: column;
+      }
+
+      &--second {
+        display: flex;
+        flex-direction: column;
+        padding: 120px 65px 90px 65px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 50px;
+      }
+
+      .menu-item {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #fff;
+        border-radius: 30px;
+        justify-content: center;
+      }
+
+      // .checkbox-menu:checked ~ &--first {
+      //   display: none;
+      //   flex-direction: column;
+      // }
+
+      // .checkbox-menu:checked ~ &--second {
+      //   display: flex;
+      //   flex-direction: column;
+      // }
+    }
+    &__btn {
+      display: none;
+      background-color: aqua;
+      .checkbox-label {
+        cursor: pointer;
+        &::before {
+          content: ".";
+          color: transparent;
+          width: 42px;
+          height: 42px;
+          background-image: url(../img/burger-menu.png);
+          background-position: center center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
+
+// -----------ESLEEEM-------------------
 div.container {
   /*max-width: 1280px;*/
   margin-left: RelativeSize(103);
@@ -194,26 +421,28 @@ section.head {
   max-width: calc(100vw - RelativeSize(103));
   margin-left: RelativeSize(103);
   margin-bottom: 50px;
-  background-image: url("/img/top-bg-building.png");
-  background-color: black;
-  background-position: left top;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  // background-image: url("/img/top-bg-building.png");
+  // background-color: black;
+  // background-position: left top;
+  // background-repeat: no-repeat;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
   @media (min-width: 1400px) {
-    height: RelativeSize(700);
+    height: RelativeSize(100);
+  }
+  @media (max-width: 1400px) {
+    height: RelativeSizeMob(60);
   }
   @media (max-width: 900px) {
-    height: RelativeSizeMob(440);
+    height: RelativeSizeMob(90);
     width: 100%;
     max-width: initial;
     margin-left: 0;
     // margin-left: RelativeSizeMob(62);
     // max-width: calc(100vw - RelativeSizeMob(62));
     background-position: 30% top;
-    margin-bottom: RelativeSizeMob(75);
   }
 }
 section.head div.h1 {
@@ -248,6 +477,7 @@ section.head div.button-know-more {
   font-size: RelativeSize(22);
   line-height: 160%;
   text-align: center;
+
   @media (min-width: 1400px) {
     height: RelativeSize(700);
     top: RelativeSize(678);
@@ -266,6 +496,11 @@ section.head div.button-know-more a {
   padding: RelativeSize(16) RelativeSize(40);
   border-radius: 100px;
   text-decoration: none;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #a10f34;
+    transition: background-color 0.3s;
+  }
   @media (max-width: 900px) {
     padding: RelativeSize(30) RelativeSize(100);
   }
@@ -338,9 +573,15 @@ section.company-description-short .info-blocks .block {
 }
 section.company-description-short .info-blocks .block:nth-of-type(1) {
   border-radius: 40px 0 0;
+  @media (max-width: 900px) {
+    border-radius: RelativeSizeMob(40) 0 0;
+  }
 }
 section.company-description-short .info-blocks .block:nth-of-type(4) {
   border-radius: 0 0 40px 0;
+  @media (max-width: 900px) {
+    border-radius: 0 0 RelativeSizeMob(40) 0;
+  }
 }
 section.company-description-short .info-blocks .block .header {
   font-family: "SF UI Display", sans-serif;
@@ -862,10 +1103,10 @@ section.effective-it-decisions
 .head {
   //   margin: auto;
   max-width: calc(100vw - 206px);
-  .header {
-    margin: 0 auto;
-    position: relative;
-  }
+  // .header {
+  //   margin: 0 auto;
+  //   position: relative;
+  // }
 }
 
 .turnkey-office {
@@ -909,6 +1150,11 @@ section.effective-it-decisions
       color: #ffffff;
       height: RelativeSize(149);
       cursor: pointer;
+      transition: border 0.3s;
+      &:hover {
+        border: 1px solid #912727;
+        transition: border 0.3s;
+      }
       @media (max-width: 900px) {
         font-size: RelativeSizeMob(17);
         height: RelativeSizeMob(75);
@@ -1437,6 +1683,9 @@ section.effective-it-decisions
       color: #ff3b3b;
       pointer-events: none;
       opacity: 0;
+      @media (max-width: 900px) {
+        font-size: RelativeSizeMob(15);
+      }
     }
     .name {
       position: relative;
@@ -1504,6 +1753,10 @@ section.effective-it-decisions
           color: #ff3b3b;
           pointer-events: none;
           text-decoration: none;
+          @media (max-width: 900px) {
+            font-size: RelativeSizeMob(15);
+            top: RelativeSizeMob(30);
+          }
         }
       }
 
@@ -1511,6 +1764,7 @@ section.effective-it-decisions
         position: relative;
         overflow: hidden;
         min-width: 35px;
+        cursor: pointer;
         @media (max-width: 900px) {
           min-width: RelativeSizeMob(48);
           min-height: RelativeSizeMob(48);
@@ -1531,6 +1785,10 @@ section.effective-it-decisions
         border-radius: 50%;
         border: 1px solid #626262;
         background: transparent no-repeat center;
+        transition: background 0.2s, border 0.2s;
+        &:hover {
+          border: 1px solid #863f3f;
+        }
         @media (max-width: 900px) {
           width: RelativeSizeMob(48);
           height: RelativeSizeMob(48);
@@ -1542,6 +1800,8 @@ section.effective-it-decisions
         background-color: #ff3b3b;
         background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         background-size: 14px 10px;
+        transition: background-image 0.2s, background-color 0.2s,
+          border-color 0.2s;
         @media (max-width: 900px) {
           background-size: RelativeSizeMob(24) RelativeSizeMob(20);
         }
@@ -1562,6 +1822,12 @@ section.effective-it-decisions
       cursor: pointer;
       outline: none;
       border: none;
+      user-select: none;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: #a10f34;
+        transition: background-color 0.3s;
+      }
       @media (max-width: 900px) {
         height: RelativeSizeMob(56);
         font-size: RelativeSizeMob(23);
