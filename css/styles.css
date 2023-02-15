@@ -56,6 +56,26 @@ header.header div.logo {
   left: 0;
 }
 
+.is-visible {
+  display: block;
+  opacity: 1;
+  animation: fadeInFromNone 3s ease-in-out;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
 header.header {
   height: 118px;
 }
@@ -140,9 +160,17 @@ section.head {
   -o-background-size: cover;
   background-size: cover;
 }
+@media (min-width: 1400px) {
+  section.head {
+    height: 36.4583333333vw;
+  }
+}
 @media (max-width: 900px) {
   section.head {
-    height: 69.4444444444vw;
+    height: 61.1111111111vw;
+    width: 100%;
+    max-width: initial;
+    margin-left: 0;
     background-position: 30% top;
     margin-bottom: 10.4166666667vw;
   }
@@ -158,6 +186,7 @@ section.head div.h1 {
   section.head div.h1 {
     font-size: 4.1666666667vw;
     line-height: 120%;
+    margin-left: 5.3645833333vw;
   }
 }
 
@@ -171,6 +200,7 @@ section.head div.h2 {
 @media (max-width: 900px) {
   section.head div.h2 {
     font-size: 3.1944444444vw;
+    margin-left: 5.3645833333vw;
   }
 }
 
@@ -185,12 +215,18 @@ section.head div.button-know-more {
   line-height: 160%;
   text-align: center;
 }
+@media (min-width: 1400px) {
+  section.head div.button-know-more {
+    height: 36.4583333333vw;
+    top: 35.3125vw;
+  }
+}
 @media (max-width: 900px) {
   section.head div.button-know-more {
     top: initial;
-    bottom: -0.5555555556vw;
+    bottom: -1.3888888889vw;
     font-size: 2.0833333333vw;
-    left: 8.8541666667vw;
+    left: 14.0625vw;
   }
 }
 
@@ -276,12 +312,13 @@ section.company-description-short .description .h4 {
 
 section.company-description-short .info-blocks .block {
   float: left;
-  width: 35%;
-  height: 4.6875vw;
+  width: 40%;
+  height: 6.25vw;
   border: 1px solid #fff;
   margin-right: 1.0416666667vw;
   margin-bottom: 1.0416666667vw;
-  padding: 0.5729166667vw 2.0833333333vw 0;
+  padding: 0.5729166667vw 2.0833333333vw;
+  padding-right: 0.4166666667vw;
   box-sizing: border-box;
 }
 @media (max-width: 900px) {
@@ -525,6 +562,62 @@ section.effective-it-decisions > div.info-blocks {
   flex-direction: row;
   height: max-content;
 }
+@media (max-width: 900px) {
+  section.effective-it-decisions > div.info-blocks {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .effective-it-decisions .info-blocks-mobile {
+    display: none;
+  }
+}
+.effective-it-decisions .info-blocks-mobile .info-container {
+  margin-top: 3.6111111111vw;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.6388888889vw;
+  background: #ca103d;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__title .title {
+  font-family: "SF UI Display", sans-serif;
+  font-weight: 800;
+  font-size: 3.4722222222vw;
+  line-height: 80%;
+  text-transform: uppercase;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__content {
+  display: flex;
+  flex-direction: row;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__content .image {
+  display: flex;
+  width: 11.1111111111vw;
+  height: 48.6111111111vw;
+  border-radius: 0px 0px 13.8888888889vw 0px;
+  overflow: hidden;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__content .image img {
+  height: 120%;
+  object-fit: cover;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__content .text {
+  width: 61.1111111111vw;
+  margin-left: 8.3333333333vw;
+  font-family: "SF UI Display", sans-serif;
+  font-weight: 400;
+  font-size: 2.9166666667vw;
+  line-height: 125%;
+  margin-top: 6.25vw;
+}
+.effective-it-decisions .info-blocks-mobile .info-container__content .text ul {
+  padding-left: 4.1666666667vw;
+}
+
 section.effective-it-decisions > div.info-blocks div.info-block {
   float: left;
   display: flex;
@@ -550,7 +643,7 @@ section.effective-it-decisions > div.info-blocks div.info-block > div.text {
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(1),
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(2),
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(3) {
-  width: 3.8020833333vw;
+  width: 4.3229166667vw;
   height: 34.8958333333vw;
   position: relative;
   cursor: pointer;
@@ -774,6 +867,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   text-transform: uppercase;
   color: #ffffff;
   height: 7.7604166667vw;
+  cursor: pointer;
 }
 @media (max-width: 900px) {
   .about-blocks .list-menu .about-blocks__element {
@@ -1442,9 +1536,22 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   align-items: center;
   font-family: "SF UI Display", sans-serif;
 }
+@media (max-width: 900px) {
+  .footer {
+    font-size: 2.7777777778vw;
+    flex-direction: column;
+  }
+}
 .footer__links {
   display: flex;
   gap: 4.1666666667vw;
+}
+@media (max-width: 900px) {
+  .footer__links {
+    gap: 40px;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .footer__links .address {
   max-width: 200px;
@@ -1452,10 +1559,25 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   flex-direction: column;
   gap: 1.0416666667vw;
 }
+@media (max-width: 900px) {
+  .footer__links .address {
+    order: 1;
+    gap: 20px;
+  }
+  .footer__links .address span:first-child {
+    order: 1;
+  }
+}
 .footer__links .contacts {
   display: flex;
   flex-direction: column;
   gap: 1.0416666667vw;
+}
+@media (max-width: 900px) {
+  .footer__links .contacts {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .footer__links .contacts a {
   text-decoration: none;
@@ -1473,6 +1595,11 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   width: 1.0416666667vw;
   height: 1.0416666667vw;
 }
+@media (max-width: 900px) {
+  .footer__links .contacts__item .icon {
+    display: none;
+  }
+}
 .footer__links .contacts__item .icon img {
   object-fit: contain;
   width: 1.0416666667vw;
@@ -1481,6 +1608,13 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 .footer .logo-bottom {
   width: 14.3229166667vw;
   height: 4.1666666667vw;
+}
+@media (max-width: 900px) {
+  .footer .logo-bottom {
+    margin: 60px 0 40px 0;
+    width: 37.5vw;
+    height: 9.7222222222vw;
+  }
 }
 .footer .logo-bottom img {
   object-fit: contain;
