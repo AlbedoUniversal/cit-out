@@ -1,4 +1,6 @@
 (function effective() {
+  console.log(window.innerWidth);
+
   let infoBlocks = document
     .querySelector(".effective-it-decisions")
     .querySelector(".info-blocks");

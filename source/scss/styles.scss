@@ -82,6 +82,30 @@ header.header div.logo {
   left: 0;
 }
 
+.is-visible {
+  display: block;
+  opacity: 1;
+
+  animation: fadeInFromNone 3s ease-in-out;
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
 header.header {
   height: 118px;
 }
@@ -115,7 +139,6 @@ header.header {
     &__screen {
       gap: RelativeSize(25);
       margin-right: 25px;
-
       transition: all 0.3s;
 
       &--first {
@@ -179,8 +202,14 @@ section.head {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  @media (min-width: 1400px) {
+    height: RelativeSize(700);
+  }
   @media (max-width: 900px) {
-    height: RelativeSizeMob(500);
+    height: RelativeSizeMob(440);
+    width: 100%;
+    max-width: initial;
+    margin-left: 0;
     // margin-left: RelativeSizeMob(62);
     // max-width: calc(100vw - RelativeSizeMob(62));
     background-position: 30% top;
@@ -195,6 +224,7 @@ section.head div.h1 {
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(30);
     line-height: 120%;
+    margin-left: RelativeSize(103);
   }
 }
 section.head div.h2 {
@@ -205,6 +235,7 @@ section.head div.h2 {
   font-weight: 400;
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(23);
+    margin-left: RelativeSize(103);
   }
 }
 section.head div.button-know-more {
@@ -217,11 +248,15 @@ section.head div.button-know-more {
   font-size: RelativeSize(22);
   line-height: 160%;
   text-align: center;
+  @media (min-width: 1400px) {
+    height: RelativeSize(700);
+    top: RelativeSize(678);
+  }
   @media (max-width: 900px) {
     top: initial;
-    bottom: RelativeSizeMob(-4);
+    bottom: RelativeSizeMob(-10);
     font-size: RelativeSize(40);
-    left: RelativeSize(170);
+    left: RelativeSize(270);
   }
 }
 section.head div.button-know-more a {
@@ -287,12 +322,13 @@ section.company-description-short .description .h4 {
 }
 section.company-description-short .info-blocks .block {
   float: left;
-  width: 35%;
-  height: RelativeSize(90);
+  width: 40%;
+  height: RelativeSize(120);
   border: 1px solid #fff;
   margin-right: RelativeSize(20);
   margin-bottom: RelativeSize(20);
-  padding: RelativeSize(11) RelativeSize(40) 0;
+  padding: RelativeSize(11) RelativeSize(40);
+  padding-right: RelativeSize(8);
   box-sizing: border-box;
   @media (max-width: 900px) {
     width: calc(50% - RelativeSizeMob(20));
@@ -508,8 +544,62 @@ section.effective-it-decisions > div.info-blocks {
   flex-direction: row;
   height: max-content;
   @media (max-width: 900px) {
+    display: none;
   }
 }
+
+.effective-it-decisions {
+  .info-blocks-mobile {
+    @media (min-width: 900px) {
+      display: none;
+    }
+    .info-container {
+      margin-top: RelativeSizeMob(26);
+      &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: RelativeSizeMob(55);
+        background: #ca103d;
+        .title {
+          font-family: "SF UI Display", sans-serif;
+          font-weight: 800;
+          font-size: RelativeSizeMob(25);
+          line-height: 80%;
+          text-transform: uppercase;
+        }
+      }
+      &__content {
+        display: flex;
+        flex-direction: row;
+        .image {
+          display: flex;
+          width: RelativeSizeMob(80);
+          height: RelativeSizeMob(350);
+          border-radius: 0px 0px RelativeSizeMob(100) 0px;
+          overflow: hidden;
+          img {
+            height: 120%;
+            object-fit: cover;
+          }
+        }
+        .text {
+          width: RelativeSizeMob(440);
+          margin-left: RelativeSizeMob(60);
+          font-family: "SF UI Display", sans-serif;
+          font-weight: 400;
+          font-size: RelativeSizeMob(21);
+          line-height: 125%;
+          margin-top: RelativeSizeMob(45);
+          ul {
+            padding-left: RelativeSizeMob(30);
+          }
+        }
+      }
+    }
+  }
+}
+
 section.effective-it-decisions > div.info-blocks div.info-block {
   float: left;
   display: flex;
@@ -534,7 +624,7 @@ section.effective-it-decisions > div.info-blocks div.info-block > div.text {
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(1),
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(2),
 section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(3) {
-  width: RelativeSize(73);
+  width: RelativeSize(83);
   height: RelativeSize(670);
   position: relative;
   cursor: pointer;
@@ -818,6 +908,7 @@ section.effective-it-decisions
       text-transform: uppercase;
       color: #ffffff;
       height: RelativeSize(149);
+      cursor: pointer;
       @media (max-width: 900px) {
         font-size: RelativeSizeMob(17);
         height: RelativeSizeMob(75);
@@ -1492,23 +1583,40 @@ section.effective-it-decisions
   font-weight: 400;
   align-items: center;
   font-family: "SF UI Display", sans-serif;
-  // @media (max-width: 900px) {
-  //   font-size: RelativeSizeMob(20);
-  // }
+  @media (max-width: 900px) {
+    font-size: RelativeSizeMob(20);
+    flex-direction: column;
+  }
 
   &__links {
     display: flex;
     gap: RelativeSize(80);
+    @media (max-width: 900px) {
+      gap: 40px;
+      flex-direction: column;
+      width: 100%;
+    }
     .address {
       max-width: 200px;
       display: flex;
       flex-direction: column;
       gap: RelativeSize(20);
+      @media (max-width: 900px) {
+        order: 1;
+        gap: 20px;
+        & span:first-child {
+          order: 1;
+        }
+      }
     }
     .contacts {
       display: flex;
       flex-direction: column;
       gap: RelativeSize(20);
+      @media (max-width: 900px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
       a {
         text-decoration: none;
         color: #fff;
@@ -1523,6 +1631,9 @@ section.effective-it-decisions
         .icon {
           width: RelativeSize(20);
           height: RelativeSize(20);
+          @media (max-width: 900px) {
+            display: none;
+          }
           img {
             object-fit: contain;
             width: RelativeSize(20);
@@ -1536,6 +1647,12 @@ section.effective-it-decisions
   .logo-bottom {
     width: RelativeSize(275);
     height: RelativeSize(80);
+
+    @media (max-width: 900px) {
+      margin: 60px 0 40px 0;
+      width: RelativeSizeMob(270);
+      height: RelativeSizeMob(70);
+    }
     img {
       object-fit: contain;
       width: 100%;
