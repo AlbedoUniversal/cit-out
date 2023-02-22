@@ -68,7 +68,11 @@ body {
   overflow-x: hidden;
 }
 
+a:active,
+a:hover,
 a {
+  text-decoration: none;
+  color: white;
 }
 
 div.container {
@@ -81,9 +85,14 @@ header.header div.logo {
   top: RelativeSize(50);
   left: RelativeSize(103);
   z-index: 10;
+  height: 45px;
+  width: 160px;
+  img {
+    height: 100%;
+  }
   @media (max-width: 900px) {
-    top: RelativeSizeMob(30);
-    height: 55px;
+    top: RelativeSizeMob(40);
+    height: 35px;
     img {
       height: 100%;
     }
@@ -133,7 +142,7 @@ header.header div.logo {
 }
 
 header.header {
-  height: 1000px;
+  height: 550px;
   position: absolute;
   top: 0;
   left: 0;
@@ -144,11 +153,11 @@ header.header {
 .siteHeader {
   height: 100%;
   position: relative;
-  height: 480px;
+  height: RelativeSize(670);
   max-width: calc(100vw - RelativeSize(103));
   margin-left: RelativeSize(103);
   margin-bottom: 50px;
-  background-image: url("/img/top-bg-building.png");
+  // background-image: url("/img/top-bg-building.png");
   background-color: black;
   background-position: left top;
   background-repeat: no-repeat;
@@ -156,14 +165,14 @@ header.header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
   @media (min-width: 1400px) {
-    height: RelativeSize(700);
   }
-  @media (min-width: 1200px) {
-    height: 390;
+  @media (max-width: 1200px) {
+    height: RelativeSize(670);
   }
   @media (max-width: 900px) {
-    height: RelativeSizeMob(373);
+    height: RelativeSizeMob(283);
     width: 100%;
     max-width: initial;
     margin-left: 0;
@@ -172,22 +181,41 @@ header.header {
     background-position: 0% top;
     margin-bottom: RelativeSizeMob(75);
   }
+  &__image {
+    position: absolute;
+    bottom: RelativeSize(58);
+    left: 0;
+    width: 100%;
+    height: calc(100% + RelativeSize(250));
+    @media (max-width: 900px) {
+      height: calc(100% + RelativeSize(220));
+      left: RelativeSize(103);
+      bottom: RelativeSize(58);
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: 0 10px;
+    }
+  }
   .h1 {
     text-transform: uppercase;
     font-size: RelativeSize(50);
     font-family: "RadiateSans-BoldExpanded", serif;
     font-weight: 400;
-    @media (max-width: 1300px) {
-      font-size: RelativeSize(70);
+    line-height: 130%;
+    @media (max-width: 1200px) {
+      font-size: RelativeSize(60);
     }
     @media (max-width: 900px) {
-      font-size: RelativeSizeMob(30);
+      font-size: RelativeSizeMob(32);
       line-height: 120%;
       margin-left: RelativeSize(103);
     }
   }
   .h2 {
-    margin-top: 10px;
+    margin-top: RelativeSize(25);
     text-transform: uppercase;
     font-size: RelativeSize(30);
     font-family: "Radiate Sans", sans-serif;
@@ -196,13 +224,14 @@ header.header {
       font-size: RelativeSize(40);
     }
     @media (max-width: 900px) {
-      font-size: RelativeSizeMob(23);
+      font-size: RelativeSizeMob(25);
       margin-left: RelativeSize(103);
+      margin-top: RelativeSize(55);
     }
   }
   .button-know-more {
     left: RelativeSize(192);
-    top: 465px;
+    bottom: RelativeSize(37);
     position: absolute;
     font-family: "SF UI Display", sans-serif;
     font-style: normal;
@@ -210,14 +239,14 @@ header.header {
     font-size: RelativeSize(22);
     line-height: 160%;
     text-align: center;
-
+    z-index: 3;
     @media (min-width: 1400px) {
       height: RelativeSize(700);
-      top: RelativeSize(678);
+      top: RelativeSize(595);
     }
     @media (max-width: 900px) {
       top: initial;
-      bottom: RelativeSizeMob(-10);
+      bottom: RelativeSizeMob(10);
       font-size: RelativeSize(40);
       left: RelativeSize(270);
     }
@@ -293,6 +322,13 @@ header.header {
         align-items: center;
         border: 1px solid #fff;
         border-radius: 20px;
+        background: transparent;
+        transition: background 0.3s, border 0.3s;
+        &:hover {
+          background: #ca103d;
+          border: 1px solid #ca103d;
+          transition: background 0.3s, border 0.3s;
+        }
       }
 
       .checkbox-menu:checked ~ &--first {
@@ -602,22 +638,15 @@ section.company-description-short .info-blocks .block .description {
   }
 }
 section.turnkey-office {
-  margin-top: 80px;
-  height: 600px;
-  // background-image: url("/img/bg-turnkey-office.png");
-  // background-color: black;
-  // background-position: right bottom;
-  // background-repeat: no-repeat;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-  border-bottom: 13px solid #ca103d;
+  margin-top: RelativeSize(180);
+  height: RelativeSize(600);
+  // border-bottom: 13px solid #ca103d;
   position: relative;
+  z-index: 3;
   @media (max-width: 900px) {
     height: RelativeSizeMob(600);
-    margin-top: RelativeSizeMob(124);
-    border-bottom: RelativeSizeMob(15) solid #ca103d;
+    margin-top: RelativeSizeMob(104);
+    // border-bottom: RelativeSizeMob(15) solid #ca103d;
   }
 }
 section.turnkey-office div.h2 {
@@ -650,9 +679,10 @@ section.turnkey-office div.description p {
 }
 section.turnkey-office div.corner-bottom-right-red {
   position: absolute;
-  width: 100%;
-  height: 25%;
-  bottom: 0px;
+  width: calc(100% - 2px);
+  height: 30%;
+  margin-right: 1px;
+  bottom: RelativeSize(-45);
   right: 0px;
   background: #ca103d;
   z-index: 1;
@@ -665,13 +695,16 @@ section.about-blocks {
   display: flex;
   flex-direction: row;
   margin-top: RelativeSize(71);
+  height: RelativeSize(600);
   @media (max-width: 900px) {
     flex-direction: column;
     margin-top: RelativeSizeMob(71);
+    height: 100%;
   }
 }
 section.about-blocks .description {
-  display: block;
+  display: flex;
+  align-items: center;
   /*padding: clamp(2.5rem, 2.01rem + 1.962vw, 5.688rem);*/
   order: 1;
   width: 100%;
@@ -712,7 +745,7 @@ section.about-blocks .description {
   }
 }
 section.about-blocks .description.active {
-  display: block;
+  display: flex;
 }
 section.about-blocks .list-menu a div {
   max-width: RelativeSize(200);
@@ -746,7 +779,7 @@ section.about-blocks div.list-menu a:nth-of-type(4) div {
   padding-top: 5px;
 }
 section.effective-it-decisions {
-  margin-top: RelativeSize(198);
+  margin-top: RelativeSize(230);
   width: 100vw;
   overflow-y: hidden;
 }
@@ -768,11 +801,11 @@ section.effective-it-decisions > .container > div.description {
   line-height: 140%;
   font-weight: 300;
   max-width: RelativeSize(1000);
-  margin: RelativeSize(20) 0 RelativeSize(40);
+  margin: RelativeSize(30) 0 RelativeSize(40);
   @media (max-width: 900px) {
     width: 85%;
     margin: 0;
-    margin-top: RelativeSizeMob(30);
+    margin-top: RelativeSizeMob(35);
     margin-bottom: RelativeSizeMob(30);
     max-width: none;
     font-size: RelativeSizeMob(20);
@@ -937,7 +970,7 @@ section.effective-it-decisions
   > div.info-blocks
   div.info-block-right
   > div.img {
-  width: 310px;
+  width: RelativeSize(460);
   height: RelativeSize(670);
   float: left;
 }
@@ -951,6 +984,28 @@ section.effective-it-decisions
   flex-direction: column;
   justify-content: flex-start;
   margin-left: RelativeSize(92);
+  .button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: RelativeSize(40);
+    margin-top: RelativeSize(30);
+    &__text {
+      font-family: "SF UI Display", sans-serif;
+      font-weight: 300;
+      font-size: RelativeSize(25);
+      line-height: 100%;
+      color: #ca103d;
+    }
+    &__arrow {
+      height: 100%;
+      margin-left: 10px;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 section.effective-it-decisions
   > div.info-blocks
@@ -1115,15 +1170,21 @@ section.effective-it-decisions
     width: 100%;
     bottom: 0;
     left: 0;
-    height: 600px;
+    height: RelativeSize(600);
     z-index: 2;
+    border: none;
+    border-radius: 0 0 RelativeSize(150) 0;
+    overflow: hidden;
     @media (max-width: 900px) {
       height: RelativeSizeMob(420);
     }
     img {
+      position: absolute;
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      @media (max-width: 900px) {
+        height: 100%;
+      }
     }
   }
 }
@@ -1135,6 +1196,8 @@ section.effective-it-decisions
     height: 100%;
   }
   .list-menu {
+    display: flex;
+    align-self: center;
     .about-blocks__element {
       display: flex;
       align-items: center;
@@ -1148,7 +1211,7 @@ section.effective-it-decisions
       line-height: 133%;
       text-transform: uppercase;
       color: #ffffff;
-      height: RelativeSize(149);
+      height: RelativeSize(100);
       cursor: pointer;
       transition: border 0.3s;
       &:hover {
@@ -1305,7 +1368,7 @@ section.effective-it-decisions
             rgba(0, 0, 0, 0.2) 0%,
             #000000 100%
           ),
-          url(/img/3.png);
+          url(/img/2.png);
       }
     }
     .projects__card:nth-child(3) {
@@ -1315,7 +1378,7 @@ section.effective-it-decisions
             rgba(0, 0, 0, 0.2) 0%,
             #000000 100%
           ),
-          url(/img/1.png);
+          url(/img/4.png);
       }
     }
     .projects__card:nth-child(4) {
@@ -1349,7 +1412,7 @@ section.effective-it-decisions
             rgba(0, 0, 0, 0.2) 0%,
             #000000 100%
           ),
-          url(/img/4.png);
+          url(/img/1.png);
       }
     }
     .projects__card:nth-child(2) {
@@ -1359,7 +1422,7 @@ section.effective-it-decisions
             rgba(0, 0, 0, 0.2) 0%,
             #000000 100%
           ),
-          url(/img/2.png);
+          url(/img/3.png);
       }
     }
     .projects__card:nth-child(3) {
@@ -1503,15 +1566,29 @@ section.effective-it-decisions
       }
       &__arrow {
         position: absolute;
+        display: flex;
+        align-items: center;
         z-index: 2;
         bottom: RelativeSize(35);
-        right: RelativeSize(35);
+        right: RelativeSize(145);
         height: RelativeSize(75);
         width: RelativeSize(47);
         cursor: pointer;
         @media (max-width: 900px) {
           height: RelativeSizeMob(51);
           width: RelativeSizeMob(32);
+          right: RelativeSizeMob(100);
+        }
+        .text {
+          font-family: "SF UI Display", sans-serif;
+          font-weight: 400;
+          font-size: RelativeSize(20);
+          line-height: 100%;
+          color: #848484;
+          margin-right: RelativeSize(10);
+          @media (max-width: 900px) {
+            font-size: RelativeSizeMob(16);
+          }
         }
         img {
           width: 100%;
@@ -1589,6 +1666,7 @@ section.effective-it-decisions
       }
       &__arrow {
         position: absolute;
+        display: flex;
         left: RelativeSize(39);
         bottom: RelativeSize(39);
         width: RelativeSize(47);
@@ -1625,6 +1703,7 @@ section.effective-it-decisions
     display: flex;
     @media (max-width: 900px) {
       width: 100%;
+      height: RelativeSizeMob(140);
     }
 
     .title-text {
@@ -1657,7 +1736,7 @@ section.effective-it-decisions
       border-radius: 0;
       background: #ffffff !important;
       outline: none;
-      height: RelativeSize(90);
+      height: RelativeSize(60);
       width: 100%;
       font-weight: 500;
       font-size: RelativeSize(25);
@@ -1665,7 +1744,7 @@ section.effective-it-decisions
       color: #000000;
       padding-left: RelativeSize(60);
       @media (max-width: 900px) {
-        height: RelativeSizeMob(77);
+        height: RelativeSizeMob(60);
         font-size: RelativeSizeMob(20);
       }
     }
@@ -1812,12 +1891,12 @@ section.effective-it-decisions
       margin-top: RelativeSize(30);
       user-select: none;
       width: 100%;
-      height: RelativeSize(80);
+      height: RelativeSize(60);
       background-color: #ca103d;
       text-transform: uppercase;
       font-weight: bold;
       color: #fff;
-      font-size: RelativeSize(25);
+      font-size: RelativeSize(22);
       border-radius: RelativeSize(100);
       cursor: pointer;
       outline: none;
