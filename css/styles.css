@@ -45,6 +45,13 @@ body {
   overflow-x: hidden;
 }
 
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: white;
+}
+
 div.container {
   margin: 0 auto;
   position: relative;
@@ -55,11 +62,16 @@ header.header div.logo {
   top: 2.6041666667vw;
   left: 5.3645833333vw;
   z-index: 10;
+  height: 45px;
+  width: 160px;
+}
+header.header div.logo img {
+  height: 100%;
 }
 @media (max-width: 900px) {
   header.header div.logo {
-    top: 4.1666666667vw;
-    height: 55px;
+    top: 5.5555555556vw;
+    height: 35px;
   }
   header.header div.logo img {
     height: 100%;
@@ -111,7 +123,7 @@ header.header div.logo {
   }
 }
 header.header {
-  height: 1000px;
+  height: 550px;
   position: absolute;
   top: 0;
   left: 0;
@@ -122,11 +134,10 @@ header.header {
 .siteHeader {
   height: 100%;
   position: relative;
-  height: 480px;
+  height: 34.8958333333vw;
   max-width: 94.6354166667vw;
   margin-left: 5.3645833333vw;
   margin-bottom: 50px;
-  background-image: url("/img/top-bg-building.png");
   background-color: black;
   background-position: left top;
   background-repeat: no-repeat;
@@ -134,20 +145,16 @@ header.header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
-@media (min-width: 1400px) {
+@media (max-width: 1200px) {
   .siteHeader {
-    height: 36.4583333333vw;
-  }
-}
-@media (min-width: 1200px) {
-  .siteHeader {
-    height: 390;
+    height: 34.8958333333vw;
   }
 }
 @media (max-width: 900px) {
   .siteHeader {
-    height: 51.8055555556vw;
+    height: 39.3055555556vw;
     width: 100%;
     max-width: initial;
     margin-left: 0;
@@ -155,26 +162,47 @@ header.header {
     margin-bottom: 10.4166666667vw;
   }
 }
+.siteHeader__image {
+  position: absolute;
+  bottom: 3.0208333333vw;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 13.0208333333vw);
+}
+@media (max-width: 900px) {
+  .siteHeader__image {
+    height: calc(100% + 11.4583333333vw);
+    left: 5.3645833333vw;
+    bottom: 3.0208333333vw;
+  }
+}
+.siteHeader__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0 10px;
+}
 .siteHeader .h1 {
   text-transform: uppercase;
   font-size: 2.6041666667vw;
   font-family: "RadiateSans-BoldExpanded", serif;
   font-weight: 400;
+  line-height: 130%;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
   .siteHeader .h1 {
-    font-size: 3.6458333333vw;
+    font-size: 3.125vw;
   }
 }
 @media (max-width: 900px) {
   .siteHeader .h1 {
-    font-size: 4.1666666667vw;
+    font-size: 4.4444444444vw;
     line-height: 120%;
     margin-left: 5.3645833333vw;
   }
 }
 .siteHeader .h2 {
-  margin-top: 10px;
+  margin-top: 1.3020833333vw;
   text-transform: uppercase;
   font-size: 1.5625vw;
   font-family: "Radiate Sans", sans-serif;
@@ -187,13 +215,14 @@ header.header {
 }
 @media (max-width: 900px) {
   .siteHeader .h2 {
-    font-size: 3.1944444444vw;
+    font-size: 3.4722222222vw;
     margin-left: 5.3645833333vw;
+    margin-top: 2.8645833333vw;
   }
 }
 .siteHeader .button-know-more {
   left: 10vw;
-  top: 465px;
+  bottom: 1.9270833333vw;
   position: absolute;
   font-family: "SF UI Display", sans-serif;
   font-style: normal;
@@ -201,17 +230,18 @@ header.header {
   font-size: 1.1458333333vw;
   line-height: 160%;
   text-align: center;
+  z-index: 3;
 }
 @media (min-width: 1400px) {
   .siteHeader .button-know-more {
     height: 36.4583333333vw;
-    top: 35.3125vw;
+    top: 30.9895833333vw;
   }
 }
 @media (max-width: 900px) {
   .siteHeader .button-know-more {
     top: initial;
-    bottom: -1.3888888889vw;
+    bottom: 1.3888888889vw;
     font-size: 2.0833333333vw;
     left: 14.0625vw;
   }
@@ -291,6 +321,13 @@ header.header {
     align-items: center;
     border: 1px solid #fff;
     border-radius: 20px;
+    background: transparent;
+    transition: background 0.3s, border 0.3s;
+  }
+  .burger-menu__screen .menu-item:hover {
+    background: #ca103d;
+    border: 1px solid #ca103d;
+    transition: background 0.3s, border 0.3s;
   }
   .checkbox-menu:checked ~ .burger-menu__screen--first {
     display: none;
@@ -618,16 +655,15 @@ section.company-description-short .info-blocks .block .description {
 }
 
 section.turnkey-office {
-  margin-top: 80px;
-  height: 600px;
-  border-bottom: 13px solid #ca103d;
+  margin-top: 9.375vw;
+  height: 31.25vw;
   position: relative;
+  z-index: 3;
 }
 @media (max-width: 900px) {
   section.turnkey-office {
     height: 83.3333333333vw;
-    margin-top: 17.2222222222vw;
-    border-bottom: 2.0833333333vw solid #ca103d;
+    margin-top: 14.4444444444vw;
   }
 }
 
@@ -670,9 +706,10 @@ section.turnkey-office div.description p {
 
 section.turnkey-office div.corner-bottom-right-red {
   position: absolute;
-  width: 100%;
-  height: 25%;
-  bottom: 0px;
+  width: calc(100% - 2px);
+  height: 30%;
+  margin-right: 1px;
+  bottom: -2.34375vw;
   right: 0px;
   background: #ca103d;
   z-index: 1;
@@ -682,16 +719,19 @@ section.about-blocks {
   display: flex;
   flex-direction: row;
   margin-top: 3.6979166667vw;
+  height: 31.25vw;
 }
 @media (max-width: 900px) {
   section.about-blocks {
     flex-direction: column;
     margin-top: 9.8611111111vw;
+    height: 100%;
   }
 }
 
 section.about-blocks .description {
-  display: block;
+  display: flex;
+  align-items: center;
   /*padding: clamp(2.5rem, 2.01rem + 1.962vw, 5.688rem);*/
   order: 1;
   width: 100%;
@@ -738,7 +778,7 @@ section.about-blocks .description {
 }
 
 section.about-blocks .description.active {
-  display: block;
+  display: flex;
 }
 
 section.about-blocks .list-menu a div {
@@ -772,7 +812,7 @@ section.about-blocks div.list-menu a:nth-of-type(4) div {
 }
 
 section.effective-it-decisions {
-  margin-top: 10.3125vw;
+  margin-top: 11.9791666667vw;
   width: 100vw;
   overflow-y: hidden;
 }
@@ -798,13 +838,13 @@ section.effective-it-decisions > .container > div.description {
   line-height: 140%;
   font-weight: 300;
   max-width: 52.0833333333vw;
-  margin: 1.0416666667vw 0 2.0833333333vw;
+  margin: 1.5625vw 0 2.0833333333vw;
 }
 @media (max-width: 900px) {
   section.effective-it-decisions > .container > div.description {
     width: 85%;
     margin: 0;
-    margin-top: 4.1666666667vw;
+    margin-top: 4.8611111111vw;
     margin-bottom: 4.1666666667vw;
     max-width: none;
     font-size: 2.7777777778vw;
@@ -953,7 +993,7 @@ section.effective-it-decisions > div.info-blocks div.info-block:nth-of-type(3) d
 }
 
 section.effective-it-decisions > div.info-blocks div.info-block-right > div.img {
-  width: 310px;
+  width: 23.9583333333vw;
   height: 34.8958333333vw;
   float: left;
 }
@@ -965,6 +1005,28 @@ section.effective-it-decisions > div.info-blocks div.info-block-right > div.cont
   flex-direction: column;
   justify-content: flex-start;
   margin-left: 4.7916666667vw;
+}
+section.effective-it-decisions > div.info-blocks div.info-block-right > div.content .button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 2.0833333333vw;
+  margin-top: 1.5625vw;
+}
+section.effective-it-decisions > div.info-blocks div.info-block-right > div.content .button__text {
+  font-family: "SF UI Display", sans-serif;
+  font-weight: 300;
+  font-size: 1.3020833333vw;
+  line-height: 100%;
+  color: #ca103d;
+}
+section.effective-it-decisions > div.info-blocks div.info-block-right > div.content .button__arrow {
+  height: 100%;
+  margin-left: 10px;
+}
+section.effective-it-decisions > div.info-blocks div.info-block-right > div.content .button__arrow img {
+  height: 100%;
+  object-fit: cover;
 }
 
 section.effective-it-decisions > div.info-blocks div.info-block-right > div.content > div.h3 {
@@ -1086,8 +1148,11 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   width: 100%;
   bottom: 0;
   left: 0;
-  height: 600px;
+  height: 31.25vw;
   z-index: 2;
+  border: none;
+  border-radius: 0 0 7.8125vw 0;
+  overflow: hidden;
 }
 @media (max-width: 900px) {
   .turnkey-office__img {
@@ -1095,15 +1160,24 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   }
 }
 .turnkey-office__img img {
+  position: absolute;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+}
+@media (max-width: 900px) {
+  .turnkey-office__img img {
+    height: 100%;
+  }
 }
 
 .about-blocks .description {
   display: flex;
   align-self: center;
   height: 100%;
+}
+.about-blocks .list-menu {
+  display: flex;
+  align-self: center;
 }
 .about-blocks .list-menu .about-blocks__element {
   display: flex;
@@ -1118,7 +1192,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   line-height: 133%;
   text-transform: uppercase;
   color: #ffffff;
-  height: 7.7604166667vw;
+  height: 5.2083333333vw;
   cursor: pointer;
   transition: border 0.3s;
 }
@@ -1290,10 +1364,10 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   }
 }
 .projects .left-column .projects__card:nth-child(2) .front-side {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/3.png);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/2.png);
 }
 .projects .left-column .projects__card:nth-child(3) .front-side {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/1.png);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/4.png);
 }
 .projects .left-column .projects__card:nth-child(4) .front-side {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/6.png);
@@ -1314,10 +1388,10 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   }
 }
 .projects .right-column .projects__card:nth-child(1) .front-side {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/4.png);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/1.png);
 }
 .projects .right-column .projects__card:nth-child(2) .front-side {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/2.png);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/3.png);
 }
 .projects .right-column .projects__card:nth-child(3) .front-side {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, #000000 100%), url(/img/5.png);
@@ -1449,9 +1523,11 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 }
 .projects__card .front-side__arrow {
   position: absolute;
+  display: flex;
+  align-items: center;
   z-index: 2;
   bottom: 1.8229166667vw;
-  right: 1.8229166667vw;
+  right: 7.5520833333vw;
   height: 3.90625vw;
   width: 2.4479166667vw;
   cursor: pointer;
@@ -1460,6 +1536,20 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   .projects__card .front-side__arrow {
     height: 7.0833333333vw;
     width: 4.4444444444vw;
+    right: 13.8888888889vw;
+  }
+}
+.projects__card .front-side__arrow .text {
+  font-family: "SF UI Display", sans-serif;
+  font-weight: 400;
+  font-size: 1.0416666667vw;
+  line-height: 100%;
+  color: #848484;
+  margin-right: 0.5208333333vw;
+}
+@media (max-width: 900px) {
+  .projects__card .front-side__arrow .text {
+    font-size: 2.2222222222vw;
   }
 }
 .projects__card .front-side__arrow img {
@@ -1543,6 +1633,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 }
 .projects__card .back-side__arrow {
   position: absolute;
+  display: flex;
   left: 2.03125vw;
   bottom: 2.03125vw;
   width: 2.4479166667vw;
@@ -1583,6 +1674,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 @media (max-width: 900px) {
   .form__title {
     width: 100%;
+    height: 19.4444444444vw;
   }
 }
 .form__title .title-text {
@@ -1619,7 +1711,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   border-radius: 0;
   background: #ffffff !important;
   outline: none;
-  height: 4.6875vw;
+  height: 3.125vw;
   width: 100%;
   font-weight: 500;
   font-size: 1.3020833333vw;
@@ -1629,7 +1721,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 }
 @media (max-width: 900px) {
   .form__content input {
-    height: 10.6944444444vw;
+    height: 8.3333333333vw;
     font-size: 2.7777777778vw;
   }
 }
@@ -1778,12 +1870,12 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   margin-top: 1.5625vw;
   user-select: none;
   width: 100%;
-  height: 4.1666666667vw;
+  height: 3.125vw;
   background-color: #ca103d;
   text-transform: uppercase;
   font-weight: bold;
   color: #fff;
-  font-size: 1.3020833333vw;
+  font-size: 1.1458333333vw;
   border-radius: 5.2083333333vw;
   cursor: pointer;
   outline: none;
