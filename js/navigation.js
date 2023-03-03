@@ -1,4 +1,8 @@
 (function navigation() {
+  const topOffset = 50;
+  let elementPosition;
+  let offsetPosition;
+
   document.querySelector(".button-know-more").addEventListener("click", () => {
     document.querySelector(".form").scrollIntoView({
       behavior: "smooth",
@@ -14,28 +18,61 @@
       document.querySelector(".checkbox-menu-mobile").checked = false;
       switch (index) {
         case 0:
-          document.querySelector(".turnkey-office").scrollIntoView({
+          elementPosition = document
+            .querySelector(".turnkey-office")
+            .getBoundingClientRect().top;
+          offsetPosition = elementPosition - topOffset;
+          window.scrollBy({
+            top: offsetPosition,
             behavior: "smooth",
-            block: "start",
           });
+          // .scrollIntoView({
+          //   behavior: "smooth",
+          //   block: "start",
+          // });
           break;
         case 1:
-          document.querySelector(".effective-it-decisions").scrollIntoView({
+          // document.querySelector(".effective-it-decisions").scrollIntoView({
+          //   behavior: "smooth",
+          //   block: "start",
+          // });
+          elementPosition = document
+            .querySelector(".effective-it-decisions")
+            .getBoundingClientRect().top;
+          offsetPosition = elementPosition - topOffset;
+          window.scrollBy({
+            top: offsetPosition,
             behavior: "smooth",
-            block: "start",
           });
           break;
         case 2:
-          document.querySelector(".projects").scrollIntoView({
+          // document.querySelector(".projects").scrollIntoView({
+          //   behavior: "smooth",
+          //   block: "start",
+          // });
+          elementPosition = document
+            .querySelector(".projects")
+            .getBoundingClientRect().top;
+          offsetPosition = elementPosition - topOffset;
+          window.scrollBy({
+            top: offsetPosition,
             behavior: "smooth",
-            block: "start",
           });
           break;
         case 3:
-          document.querySelector(".form").scrollIntoView({
+          // document.querySelector(".form").scrollIntoView({
+          //   behavior: "smooth",
+          //   block: "start",
+          // });
+          elementPosition = document
+            .querySelector(".form")
+            .getBoundingClientRect().top;
+          offsetPosition = elementPosition - topOffset;
+          window.scrollBy({
+            top: offsetPosition,
             behavior: "smooth",
-            block: "start",
           });
+
           break;
 
         default:
