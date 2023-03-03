@@ -80,29 +80,79 @@ div.container {
   position: relative;
 }
 
+.mainHeaderContainer {
+  height: 66vh;
+  position: relative;
+  background: url("/img/top-bg-building.png") center/cover;
+  @media (max-width: 900px) {
+    height: RelativeSizeMob(500);
+    background-position: 40%;
+  }
+  .button-know-more {
+    left: RelativeSize(192);
+    bottom: RelativeSize(-10);
+    position: absolute;
+    font-family: "SF UI Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: RelativeSize(22);
+    line-height: 160%;
+    text-align: center;
+    z-index: 8;
+    @media (min-width: 1400px) {
+      // height: RelativeSize(700);
+      // top: RelativeSize(595);
+    }
+    @media (max-width: 900px) {
+      top: initial;
+      bottom: RelativeSizeMob(-10);
+      font-size: RelativeSize(40);
+      left: RelativeSize(270);
+    }
+    a {
+      background-color: #ca103d;
+      color: #fff;
+      text-transform: uppercase;
+      padding: RelativeSize(16) RelativeSize(40);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: #a10f34;
+        transition: background-color 0.3s;
+      }
+      @media (max-width: 900px) {
+        padding: RelativeSize(30) RelativeSize(100);
+      }
+    }
+  }
+}
+
 header.header div.logo {
   position: absolute;
   top: RelativeSize(50);
   left: RelativeSize(103);
   z-index: 10;
   height: 45px;
-  width: 160px;
+  width: fit-content;
   img {
     height: 100%;
   }
   @media (max-width: 900px) {
     top: RelativeSizeMob(40);
     height: 35px;
-    img {
-      height: 100%;
-    }
   }
   @media (min-width: 900px) {
     top: RelativeSizeMob(25);
     left: 0;
   }
   @media (min-width: 1300px) {
-    top: RelativeSize(55);
+    top: RelativeSize(30);
+    height: 60px;
+  }
+  @media (min-width: 1600px) {
+    top: RelativeSize(30);
+    height: 80px;
   }
 }
 
@@ -137,6 +187,7 @@ header.header div.logo {
 
 @media (max-width: 900px) {
   .checkbox-menu-mobile:checked ~ .burger-menu {
+    z-index: 9;
     right: 0;
   }
 }
@@ -147,32 +198,32 @@ header.header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 8;
 }
 
 .siteHeader {
   height: 100%;
-  position: relative;
-  height: RelativeSize(670);
+  // position: relative;
+  // height: 66vh;
   max-width: calc(100vw - RelativeSize(103));
   margin-left: RelativeSize(103);
-  margin-bottom: 50px;
+  margin-bottom: RelativeSize(60);
   // background-image: url("/img/top-bg-building.png");
-  background-color: black;
+  // background-color: black;
   background-position: left top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: hidden;
+  margin-top: RelativeSize(40);
+
   @media (min-width: 1400px) {
   }
   @media (max-width: 1200px) {
     height: RelativeSize(670);
   }
   @media (max-width: 900px) {
-    height: RelativeSizeMob(283);
+    height: RelativeSizeMob(330);
     width: 100%;
     max-width: initial;
     margin-left: 0;
@@ -180,23 +231,28 @@ header.header {
     // max-width: calc(100vw - RelativeSizeMob(62));
     background-position: 0% top;
     margin-bottom: RelativeSizeMob(75);
+    margin-top: RelativeSizeMob(20);
   }
   &__image {
     position: absolute;
-    bottom: RelativeSize(58);
-    left: 0;
-    width: 100%;
-    height: calc(100% + RelativeSize(250));
+    //bottom: RelativeSize(58);
+    top: 0;
+    left: RelativeSize(103);
+    width: calc(100% - RelativeSize(23));
+    max-height: 66vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 30px;
     @media (max-width: 900px) {
-      height: calc(100% + RelativeSize(220));
+      height: calc(100% + RelativeSize(60));
       left: RelativeSize(103);
       bottom: RelativeSize(58);
     }
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
-      object-position: 0 10px;
+      object-fit: contain;
+      object-position: 0 0px;
     }
   }
   .h1 {
@@ -204,13 +260,13 @@ header.header {
     font-size: RelativeSize(50);
     font-family: "RadiateSans-BoldExpanded", serif;
     font-weight: 400;
-    line-height: 130%;
+    line-height: 133%;
     @media (max-width: 1200px) {
       font-size: RelativeSize(60);
     }
     @media (max-width: 900px) {
       font-size: RelativeSizeMob(32);
-      line-height: 120%;
+      line-height: 163%;
       margin-left: RelativeSize(103);
     }
   }
@@ -227,44 +283,6 @@ header.header {
       font-size: RelativeSizeMob(25);
       margin-left: RelativeSize(103);
       margin-top: RelativeSize(55);
-    }
-  }
-  .button-know-more {
-    left: RelativeSize(192);
-    bottom: RelativeSize(37);
-    position: absolute;
-    font-family: "SF UI Display", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: RelativeSize(22);
-    line-height: 160%;
-    text-align: center;
-    z-index: 3;
-    @media (min-width: 1400px) {
-      height: RelativeSize(700);
-      top: RelativeSize(595);
-    }
-    @media (max-width: 900px) {
-      top: initial;
-      bottom: RelativeSizeMob(10);
-      font-size: RelativeSize(40);
-      left: RelativeSize(270);
-    }
-    a {
-      background-color: #ca103d;
-      color: #fff;
-      text-transform: uppercase;
-      padding: RelativeSize(16) RelativeSize(40);
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-      &:hover {
-        background-color: #a10f34;
-        transition: background-color 0.3s;
-      }
-      @media (max-width: 900px) {
-        padding: RelativeSize(30) RelativeSize(100);
-      }
     }
   }
 }
@@ -324,6 +342,8 @@ header.header {
         border-radius: 20px;
         background: transparent;
         transition: background 0.3s, border 0.3s;
+        cursor: pointer;
+        user-select: none;
         &:hover {
           background: #ca103d;
           border: 1px solid #ca103d;
@@ -456,7 +476,7 @@ section.head {
   height: 479px;
   max-width: calc(100vw - RelativeSize(103));
   margin-left: RelativeSize(103);
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   // background-image: url("/img/top-bg-building.png");
   // background-color: black;
   // background-position: left top;
@@ -488,7 +508,7 @@ section.head div.h1 {
   font-weight: 400;
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(30);
-    line-height: 120%;
+    line-height: 163%;
     margin-left: RelativeSize(103);
   }
 }
@@ -541,29 +561,42 @@ section.head div.button-know-more a {
     padding: RelativeSize(30) RelativeSize(100);
   }
 }
+
 .company-description-short {
   display: flex;
+  height: 33vh;
   flex-direction: row;
+  margin-top: RelativeSize(50);
   @media (max-width: 900px) {
     flex-direction: column;
+    height: initial;
+    margin-top: RelativeSize(150);
     justify-content: center;
   }
+  .info-blocks {
+    @media (max-width: 900px) {
+      margin-top: RelativeSize(60) !important;
+    }
+  }
 }
+
 section.company-description-short > .description {
   margin: auto 0;
   @media (max-width: 900px) {
     display: flex;
     flex-direction: column;
-    margin-bottom: RelativeSizeMob(75);
+    margin-bottom: RelativeSizeMob(55);
   }
 }
 section.company-description-short .description,
 section.company-description-short .info-blocks {
   float: left;
+  margin: auto;
   width: 50%;
   @media (max-width: 900px) {
     display: flex;
     width: 100%;
+    margin-top: RelativeSize(10);
     flex-wrap: wrap;
     gap: RelativeSizeMob(20);
   }
@@ -639,13 +672,13 @@ section.company-description-short .info-blocks .block .description {
 }
 section.turnkey-office {
   margin-top: RelativeSize(180);
-  height: RelativeSize(600);
+  height: RelativeSize(660);
   // border-bottom: 13px solid #ca103d;
   position: relative;
   z-index: 3;
   @media (max-width: 900px) {
     height: RelativeSizeMob(600);
-    margin-top: RelativeSizeMob(104);
+    margin-top: RelativeSizeMob(40);
     // border-bottom: RelativeSizeMob(15) solid #ca103d;
   }
 }
@@ -654,10 +687,11 @@ section.turnkey-office div.h2 {
   font-size: RelativeSize(45);
   font-family: "RadiateSans-BoldExpanded", serif;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 163%;
+  margin-left: RelativeSize(109);
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(25);
-    width: RelativeSizeMob(480);
+    width: calc(100% - RelativeSize(220));
   }
 }
 section.turnkey-office div.description {
@@ -665,27 +699,36 @@ section.turnkey-office div.description {
   font-family: "SF UI Display", sans-serif;
   font-weight: 300;
   line-height: 140%;
-  margin-top: 20px;
+  margin-top: RelativeSize(20);
+  margin-left: RelativeSize(109);
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(18);
+    width: calc(100% - RelativeSize(220));
   }
 }
 section.turnkey-office div.description p {
   max-width: RelativeSize(1200);
   margin-bottom: 15px;
   @media (max-width: 900px) {
-    max-width: RelativeSizeMob(536);
+    max-width: 95%;
   }
 }
 section.turnkey-office div.corner-bottom-right-red {
   position: absolute;
-  width: calc(100% - 2px);
+  width: initial;
+  bottom: 0;
+  left: RelativeSize(109);
+
   height: 30%;
   margin-right: 1px;
   bottom: RelativeSize(-45);
   right: 0px;
   background: #ca103d;
   z-index: 1;
+  @media (max-width: 900px) {
+    left: initial;
+    width: 100%;
+  }
 }
 //   section.turnkey-office div.corner-bottom-right-red img {
 //     width: 248px;
@@ -782,13 +825,16 @@ section.effective-it-decisions {
   margin-top: RelativeSize(230);
   width: 100vw;
   overflow-y: hidden;
+  @media (max-width: 900px) {
+    margin-top: RelativeSize(320);
+  }
 }
 section.effective-it-decisions div.h2 {
   text-transform: uppercase;
   font-size: RelativeSize(45);
   font-family: "RadiateSans-BoldExpanded", sans-serif;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 163%;
   @media (max-width: 900px) {
     font-size: RelativeSizeMob(25);
     margin-right: RelativeSizeMob(80);
@@ -819,6 +865,22 @@ section.effective-it-decisions > div.info-blocks {
   height: max-content;
   @media (max-width: 900px) {
     display: none;
+  }
+  .info-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .number {
+      position: absolute;
+      bottom: RelativeSize(20);
+      color: #9d9d9d;
+      font-size: RelativeSize(35);
+    }
+  }
+  .info-block-right {
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }
 
@@ -1167,16 +1229,19 @@ section.effective-it-decisions
 .turnkey-office {
   &__img {
     position: absolute;
-    width: 100%;
+    width: calc(100% - RelativeSize(109));
     bottom: 0;
-    left: 0;
-    height: RelativeSize(600);
+    left: RelativeSize(109);
+    height: RelativeSize(700);
     z-index: 2;
     border: none;
     border-radius: 0 0 RelativeSize(150) 0;
     overflow: hidden;
     @media (max-width: 900px) {
       height: RelativeSizeMob(420);
+      width: 100%;
+      left: initial;
+      border-radius: initial;
     }
     img {
       position: absolute;
@@ -1184,6 +1249,7 @@ section.effective-it-decisions
       width: 100%;
       @media (max-width: 900px) {
         height: 100%;
+        width: 120%;
       }
     }
   }
@@ -1207,13 +1273,14 @@ section.effective-it-decisions
       transition: border-radius 0.5s, background 0.5s;
       font-family: "SF UI Display", sans-serif;
       font-weight: 800;
-      font-size: RelativeSize(30);
-      line-height: 133%;
+      font-size: RelativeSize(27);
+      line-height: 120%;
       text-transform: uppercase;
       color: #ffffff;
       height: RelativeSize(100);
       cursor: pointer;
       transition: border 0.3s;
+      width: 80%;
       &:hover {
         border: 1px solid #912727;
         transition: border 0.3s;
@@ -1221,6 +1288,7 @@ section.effective-it-decisions
       @media (max-width: 900px) {
         font-size: RelativeSizeMob(17);
         height: RelativeSizeMob(75);
+        width: 100%;
       }
       div {
         width: 80%;
@@ -1346,6 +1414,8 @@ section.effective-it-decisions
   flex-direction: row;
   justify-content: space-between;
   margin-top: RelativeSize(270);
+  margin-left: RelativeSize(280);
+  margin-right: RelativeSize(280);
   @media (max-width: 900px) {
     flex-direction: column;
   }
@@ -1460,10 +1530,11 @@ section.effective-it-decisions
   //     align-items: center;
   //   }
   .projects__card {
-    width: RelativeSize(750);
-    height: RelativeSize(850);
+    width: RelativeSize(620);
+    height: RelativeSize(690);
     box-sizing: border-box;
     position: relative;
+    cursor: pointer;
     @media (max-width: 900px) {
       width: RelativeSizeMob(580);
       height: RelativeSizeMob(580);
@@ -1544,7 +1615,7 @@ section.effective-it-decisions
         text-transform: uppercase;
         font-family: "RadiateSans-BoldExpanded", sans-serif;
         font-weight: 400;
-        font-size: RelativeSize(30);
+        font-size: RelativeSize(26);
         line-height: 163%;
         @media (max-width: 900px) {
           font-size: RelativeSizeMob(25);
@@ -1555,7 +1626,7 @@ section.effective-it-decisions
         margin-bottom: RelativeSize(100);
         font-family: "Radiate Sans", sans-serif;
         font-weight: 400;
-        font-size: RelativeSize(25);
+        font-size: RelativeSize(24);
         line-height: 133%;
         width: calc(100% - RelativeSize(150));
         // padding-left: RelativeSize(75);
@@ -1620,7 +1691,7 @@ section.effective-it-decisions
         margin-top: RelativeSize(64);
         font-family: "RadiateSans-BoldExpanded", sans-serif;
         font-weight: 400;
-        font-size: RelativeSize(30);
+        font-size: RelativeSize(26);
         line-height: 130%;
         text-transform: uppercase;
         margin-right: RelativeSize(87);
@@ -1633,7 +1704,7 @@ section.effective-it-decisions
       &__subtitle {
         font-family: "Radiate Sans", sans-serif;
         font-weight: 400;
-        font-size: RelativeSize(25);
+        font-size: RelativeSize(24);
         line-height: 133%;
         margin-left: RelativeSize(80);
         margin-top: RelativeSize(20);
@@ -1692,7 +1763,7 @@ section.effective-it-decisions
   margin-top: RelativeSize(243);
   @media (max-width: 900px) {
     flex-direction: column;
-    margin-top: RelativeSizeMob(153);
+    margin-top: RelativeSizeMob(103);
   }
   &__title {
     font-weight: 400;
@@ -1724,9 +1795,10 @@ section.effective-it-decisions
   &__content {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: flex-end;
+    width: 40%;
     row-gap: RelativeSize(25);
-    margin-right: RelativeSize(65);
+    // margin-right: RelativeSize(65);
     @media (max-width: 900px) {
       width: calc(100% - RelativeSize(35));
       row-gap: RelativeSizeMob(22);
@@ -1737,7 +1809,7 @@ section.effective-it-decisions
       background: #ffffff !important;
       outline: none;
       height: RelativeSize(60);
-      width: 100%;
+      width: 80%;
       font-weight: 500;
       font-size: RelativeSize(25);
       line-height: 120%;
@@ -1746,6 +1818,7 @@ section.effective-it-decisions
       @media (max-width: 900px) {
         height: RelativeSizeMob(60);
         font-size: RelativeSizeMob(20);
+        width: 100%;
       }
     }
 
@@ -1767,30 +1840,35 @@ section.effective-it-decisions
       }
     }
     .name {
+      display: flex;
       position: relative;
       input::placeholder {
         color: #000;
       }
     }
     .company {
+      display: flex;
       position: relative;
       input::placeholder {
         color: #000;
       }
     }
     .number {
+      display: flex;
       position: relative;
       input::placeholder {
         color: #000;
       }
     }
     .email {
+      display: flex;
       position: relative;
       input::placeholder {
         color: #000;
       }
     }
     .request {
+      display: flex;
       input {
         border-radius: 0px 0px 80px 0px;
       }
@@ -1890,7 +1968,7 @@ section.effective-it-decisions
     .button {
       margin-top: RelativeSize(30);
       user-select: none;
-      width: 100%;
+      width: 90%;
       height: RelativeSize(60);
       background-color: #ca103d;
       text-transform: uppercase;
@@ -1910,6 +1988,7 @@ section.effective-it-decisions
       @media (max-width: 900px) {
         height: RelativeSizeMob(56);
         font-size: RelativeSizeMob(23);
+        width: 100%;
         padding: RelativeSizeMob(10) RelativeSizeMob(20);
       }
     }

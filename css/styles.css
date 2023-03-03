@@ -57,13 +57,63 @@ div.container {
   position: relative;
 }
 
+.mainHeaderContainer {
+  height: 66vh;
+  position: relative;
+  background: url("/img/top-bg-building.png") center/cover;
+}
+@media (max-width: 900px) {
+  .mainHeaderContainer {
+    height: 69.4444444444vw;
+    background-position: 40%;
+  }
+}
+.mainHeaderContainer .button-know-more {
+  left: 10vw;
+  bottom: -0.5208333333vw;
+  position: absolute;
+  font-family: "SF UI Display", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1458333333vw;
+  line-height: 160%;
+  text-align: center;
+  z-index: 8;
+}
+@media (max-width: 900px) {
+  .mainHeaderContainer .button-know-more {
+    top: initial;
+    bottom: -1.3888888889vw;
+    font-size: 2.0833333333vw;
+    left: 14.0625vw;
+  }
+}
+.mainHeaderContainer .button-know-more a {
+  background-color: #ca103d;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.8333333333vw 2.0833333333vw;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.mainHeaderContainer .button-know-more a:hover {
+  background-color: #a10f34;
+  transition: background-color 0.3s;
+}
+@media (max-width: 900px) {
+  .mainHeaderContainer .button-know-more a {
+    padding: 1.5625vw 5.2083333333vw;
+  }
+}
+
 header.header div.logo {
   position: absolute;
   top: 2.6041666667vw;
   left: 5.3645833333vw;
   z-index: 10;
   height: 45px;
-  width: 160px;
+  width: fit-content;
 }
 header.header div.logo img {
   height: 100%;
@@ -72,9 +122,6 @@ header.header div.logo img {
   header.header div.logo {
     top: 5.5555555556vw;
     height: 35px;
-  }
-  header.header div.logo img {
-    height: 100%;
   }
 }
 @media (min-width: 900px) {
@@ -85,7 +132,14 @@ header.header div.logo img {
 }
 @media (min-width: 1300px) {
   header.header div.logo {
-    top: 2.8645833333vw;
+    top: 1.5625vw;
+    height: 60px;
+  }
+}
+@media (min-width: 1600px) {
+  header.header div.logo {
+    top: 1.5625vw;
+    height: 80px;
   }
 }
 
@@ -119,6 +173,7 @@ header.header div.logo img {
 }
 @media (max-width: 900px) {
   .checkbox-menu-mobile:checked ~ .burger-menu {
+    z-index: 9;
     right: 0;
   }
 }
@@ -128,24 +183,20 @@ header.header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 8;
 }
 
 .siteHeader {
   height: 100%;
-  position: relative;
-  height: 34.8958333333vw;
   max-width: 94.6354166667vw;
   margin-left: 5.3645833333vw;
-  margin-bottom: 50px;
-  background-color: black;
+  margin-bottom: 3.125vw;
   background-position: left top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: hidden;
+  margin-top: 2.0833333333vw;
 }
 @media (max-width: 1200px) {
   .siteHeader {
@@ -154,24 +205,28 @@ header.header {
 }
 @media (max-width: 900px) {
   .siteHeader {
-    height: 39.3055555556vw;
+    height: 45.8333333333vw;
     width: 100%;
     max-width: initial;
     margin-left: 0;
     background-position: 0% top;
     margin-bottom: 10.4166666667vw;
+    margin-top: 2.7777777778vw;
   }
 }
 .siteHeader__image {
   position: absolute;
-  bottom: 3.0208333333vw;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 13.0208333333vw);
+  top: 0;
+  left: 5.3645833333vw;
+  width: calc(100% - 1.1979166667vw);
+  max-height: 66vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 30px;
 }
 @media (max-width: 900px) {
   .siteHeader__image {
-    height: calc(100% + 11.4583333333vw);
+    height: calc(100% + 3.125vw);
     left: 5.3645833333vw;
     bottom: 3.0208333333vw;
   }
@@ -179,15 +234,15 @@ header.header {
 .siteHeader__image img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  object-position: 0 10px;
+  object-fit: contain;
+  object-position: 0 0px;
 }
 .siteHeader .h1 {
   text-transform: uppercase;
   font-size: 2.6041666667vw;
   font-family: "RadiateSans-BoldExpanded", serif;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 133%;
 }
 @media (max-width: 1200px) {
   .siteHeader .h1 {
@@ -197,7 +252,7 @@ header.header {
 @media (max-width: 900px) {
   .siteHeader .h1 {
     font-size: 4.4444444444vw;
-    line-height: 120%;
+    line-height: 163%;
     margin-left: 5.3645833333vw;
   }
 }
@@ -218,50 +273,6 @@ header.header {
     font-size: 3.4722222222vw;
     margin-left: 5.3645833333vw;
     margin-top: 2.8645833333vw;
-  }
-}
-.siteHeader .button-know-more {
-  left: 10vw;
-  bottom: 1.9270833333vw;
-  position: absolute;
-  font-family: "SF UI Display", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.1458333333vw;
-  line-height: 160%;
-  text-align: center;
-  z-index: 3;
-}
-@media (min-width: 1400px) {
-  .siteHeader .button-know-more {
-    height: 36.4583333333vw;
-    top: 30.9895833333vw;
-  }
-}
-@media (max-width: 900px) {
-  .siteHeader .button-know-more {
-    top: initial;
-    bottom: 1.3888888889vw;
-    font-size: 2.0833333333vw;
-    left: 14.0625vw;
-  }
-}
-.siteHeader .button-know-more a {
-  background-color: #ca103d;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 0.8333333333vw 2.0833333333vw;
-  border-radius: 100px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.siteHeader .button-know-more a:hover {
-  background-color: #a10f34;
-  transition: background-color 0.3s;
-}
-@media (max-width: 900px) {
-  .siteHeader .button-know-more a {
-    padding: 1.5625vw 5.2083333333vw;
   }
 }
 
@@ -323,6 +334,8 @@ header.header {
     border-radius: 20px;
     background: transparent;
     transition: background 0.3s, border 0.3s;
+    cursor: pointer;
+    user-select: none;
   }
   .burger-menu__screen .menu-item:hover {
     background: #ca103d;
@@ -432,7 +445,6 @@ section.head {
   height: 479px;
   max-width: 94.6354166667vw;
   margin-left: 5.3645833333vw;
-  margin-bottom: 50px;
 }
 @media (min-width: 1400px) {
   section.head {
@@ -463,7 +475,7 @@ section.head div.h1 {
 @media (max-width: 900px) {
   section.head div.h1 {
     font-size: 4.1666666667vw;
-    line-height: 120%;
+    line-height: 163%;
     margin-left: 5.3645833333vw;
   }
 }
@@ -529,12 +541,21 @@ section.head div.button-know-more a:hover {
 
 .company-description-short {
   display: flex;
+  height: 33vh;
   flex-direction: row;
+  margin-top: 2.6041666667vw;
 }
 @media (max-width: 900px) {
   .company-description-short {
     flex-direction: column;
+    height: initial;
+    margin-top: 7.8125vw;
     justify-content: center;
+  }
+}
+@media (max-width: 900px) {
+  .company-description-short .info-blocks {
+    margin-top: 3.125vw !important;
   }
 }
 
@@ -545,13 +566,14 @@ section.company-description-short > .description {
   section.company-description-short > .description {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10.4166666667vw;
+    margin-bottom: 7.6388888889vw;
   }
 }
 
 section.company-description-short .description,
 section.company-description-short .info-blocks {
   float: left;
+  margin: auto;
   width: 50%;
 }
 @media (max-width: 900px) {
@@ -559,6 +581,7 @@ section.company-description-short .info-blocks {
   section.company-description-short .info-blocks {
     display: flex;
     width: 100%;
+    margin-top: 0.5208333333vw;
     flex-wrap: wrap;
     gap: 2.7777777778vw;
   }
@@ -656,14 +679,14 @@ section.company-description-short .info-blocks .block .description {
 
 section.turnkey-office {
   margin-top: 9.375vw;
-  height: 31.25vw;
+  height: 34.375vw;
   position: relative;
   z-index: 3;
 }
 @media (max-width: 900px) {
   section.turnkey-office {
     height: 83.3333333333vw;
-    margin-top: 14.4444444444vw;
+    margin-top: 5.5555555556vw;
   }
 }
 
@@ -672,12 +695,13 @@ section.turnkey-office div.h2 {
   font-size: 2.34375vw;
   font-family: "RadiateSans-BoldExpanded", serif;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 163%;
+  margin-left: 5.6770833333vw;
 }
 @media (max-width: 900px) {
   section.turnkey-office div.h2 {
     font-size: 3.4722222222vw;
-    width: 66.6666666667vw;
+    width: calc(100% - 11.4583333333vw);
   }
 }
 
@@ -686,11 +710,13 @@ section.turnkey-office div.description {
   font-family: "SF UI Display", sans-serif;
   font-weight: 300;
   line-height: 140%;
-  margin-top: 20px;
+  margin-top: 1.0416666667vw;
+  margin-left: 5.6770833333vw;
 }
 @media (max-width: 900px) {
   section.turnkey-office div.description {
     font-size: 2.5vw;
+    width: calc(100% - 11.4583333333vw);
   }
 }
 
@@ -700,19 +726,27 @@ section.turnkey-office div.description p {
 }
 @media (max-width: 900px) {
   section.turnkey-office div.description p {
-    max-width: 74.4444444444vw;
+    max-width: 95%;
   }
 }
 
 section.turnkey-office div.corner-bottom-right-red {
   position: absolute;
-  width: calc(100% - 2px);
+  width: initial;
+  bottom: 0;
+  left: 5.6770833333vw;
   height: 30%;
   margin-right: 1px;
   bottom: -2.34375vw;
   right: 0px;
   background: #ca103d;
   z-index: 1;
+}
+@media (max-width: 900px) {
+  section.turnkey-office div.corner-bottom-right-red {
+    left: initial;
+    width: 100%;
+  }
 }
 
 section.about-blocks {
@@ -816,13 +850,18 @@ section.effective-it-decisions {
   width: 100vw;
   overflow-y: hidden;
 }
+@media (max-width: 900px) {
+  section.effective-it-decisions {
+    margin-top: 16.6666666667vw;
+  }
+}
 
 section.effective-it-decisions div.h2 {
   text-transform: uppercase;
   font-size: 2.34375vw;
   font-family: "RadiateSans-BoldExpanded", sans-serif;
   font-weight: 400;
-  line-height: 130%;
+  line-height: 163%;
 }
 @media (max-width: 900px) {
   section.effective-it-decisions div.h2 {
@@ -862,6 +901,22 @@ section.effective-it-decisions > div.info-blocks {
   section.effective-it-decisions > div.info-blocks {
     display: none;
   }
+}
+section.effective-it-decisions > div.info-blocks .info-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.effective-it-decisions > div.info-blocks .info-block .number {
+  position: absolute;
+  bottom: 1.0416666667vw;
+  color: #9d9d9d;
+  font-size: 1.8229166667vw;
+}
+section.effective-it-decisions > div.info-blocks .info-block-right {
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 @media (min-width: 900px) {
@@ -1145,10 +1200,10 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 
 .turnkey-office__img {
   position: absolute;
-  width: 100%;
+  width: calc(100% - 5.6770833333vw);
   bottom: 0;
-  left: 0;
-  height: 31.25vw;
+  left: 5.6770833333vw;
+  height: 36.4583333333vw;
   z-index: 2;
   border: none;
   border-radius: 0 0 7.8125vw 0;
@@ -1157,6 +1212,9 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 @media (max-width: 900px) {
   .turnkey-office__img {
     height: 58.3333333333vw;
+    width: 100%;
+    left: initial;
+    border-radius: initial;
   }
 }
 .turnkey-office__img img {
@@ -1167,6 +1225,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 @media (max-width: 900px) {
   .turnkey-office__img img {
     height: 100%;
+    width: 120%;
   }
 }
 
@@ -1188,13 +1247,14 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   transition: border-radius 0.5s, background 0.5s;
   font-family: "SF UI Display", sans-serif;
   font-weight: 800;
-  font-size: 1.5625vw;
-  line-height: 133%;
+  font-size: 1.40625vw;
+  line-height: 120%;
   text-transform: uppercase;
   color: #ffffff;
   height: 5.2083333333vw;
   cursor: pointer;
   transition: border 0.3s;
+  width: 80%;
 }
 .about-blocks .list-menu .about-blocks__element:hover {
   border: 1px solid #912727;
@@ -1204,6 +1264,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   .about-blocks .list-menu .about-blocks__element {
     font-size: 2.3611111111vw;
     height: 10.4166666667vw;
+    width: 100%;
   }
 }
 .about-blocks .list-menu .about-blocks__element div {
@@ -1342,6 +1403,8 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   flex-direction: row;
   justify-content: space-between;
   margin-top: 14.0625vw;
+  margin-left: 14.5833333333vw;
+  margin-right: 14.5833333333vw;
 }
 @media (max-width: 900px) {
   .projects {
@@ -1413,10 +1476,11 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   }
 }
 .projects .projects__card {
-  width: 39.0625vw;
-  height: 44.2708333333vw;
+  width: 32.2916666667vw;
+  height: 35.9375vw;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
 }
 @media (max-width: 900px) {
   .projects .projects__card {
@@ -1499,7 +1563,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   text-transform: uppercase;
   font-family: "RadiateSans-BoldExpanded", sans-serif;
   font-weight: 400;
-  font-size: 1.5625vw;
+  font-size: 1.3541666667vw;
   line-height: 163%;
 }
 @media (max-width: 900px) {
@@ -1512,7 +1576,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   margin-bottom: 5.2083333333vw;
   font-family: "Radiate Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.3020833333vw;
+  font-size: 1.25vw;
   line-height: 133%;
   width: calc(100% - 7.8125vw);
 }
@@ -1583,7 +1647,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   margin-top: 3.3333333333vw;
   font-family: "RadiateSans-BoldExpanded", sans-serif;
   font-weight: 400;
-  font-size: 1.5625vw;
+  font-size: 1.3541666667vw;
   line-height: 130%;
   text-transform: uppercase;
   margin-right: 4.53125vw;
@@ -1598,7 +1662,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 .projects__card .back-side__subtitle {
   font-family: "Radiate Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.3020833333vw;
+  font-size: 1.25vw;
   line-height: 133%;
   margin-left: 4.1666666667vw;
   margin-top: 1.0416666667vw;
@@ -1660,7 +1724,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 @media (max-width: 900px) {
   .form {
     flex-direction: column;
-    margin-top: 21.25vw;
+    margin-top: 14.3055555556vw;
   }
 }
 .form__title {
@@ -1696,9 +1760,9 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 .form__content {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: flex-end;
+  width: 40%;
   row-gap: 1.3020833333vw;
-  margin-right: 3.3854166667vw;
 }
 @media (max-width: 900px) {
   .form__content {
@@ -1712,7 +1776,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   background: #ffffff !important;
   outline: none;
   height: 3.125vw;
-  width: 100%;
+  width: 80%;
   font-weight: 500;
   font-size: 1.3020833333vw;
   line-height: 120%;
@@ -1723,6 +1787,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   .form__content input {
     height: 8.3333333333vw;
     font-size: 2.7777777778vw;
+    width: 100%;
   }
 }
 .form__content .error {
@@ -1744,28 +1809,35 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   }
 }
 .form__content .name {
+  display: flex;
   position: relative;
 }
 .form__content .name input::placeholder {
   color: #000;
 }
 .form__content .company {
+  display: flex;
   position: relative;
 }
 .form__content .company input::placeholder {
   color: #000;
 }
 .form__content .number {
+  display: flex;
   position: relative;
 }
 .form__content .number input::placeholder {
   color: #000;
 }
 .form__content .email {
+  display: flex;
   position: relative;
 }
 .form__content .email input::placeholder {
   color: #000;
+}
+.form__content .request {
+  display: flex;
 }
 .form__content .request input {
   border-radius: 0px 0px 80px 0px;
@@ -1869,7 +1941,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 .form__content .button {
   margin-top: 1.5625vw;
   user-select: none;
-  width: 100%;
+  width: 90%;
   height: 3.125vw;
   background-color: #ca103d;
   text-transform: uppercase;
@@ -1891,6 +1963,7 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
   .form__content .button {
     height: 7.7777777778vw;
     font-size: 3.1944444444vw;
+    width: 100%;
     padding: 1.3888888889vw 2.7777777778vw;
   }
 }

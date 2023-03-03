@@ -22,51 +22,55 @@
     <link href="/css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <section class="head">
-      <header class="header">
-        <div class="logo">
-          <img src="/img/logo-top.svg" alt="Ланит-Интеграция лого" />
-        </div>
-        <div class="mobile-menu__btn">
-          <label class="checkbox-label" for="burgerButtonMobile"></label>
-        </div>
-        <input
-          class="checkbox-menu-mobile"
-          id="burgerButtonMobile"
-          type="checkbox"
-        />
-        <div class="burger-menu">
-          <input class="checkbox-menu" id="burgerButton" type="checkbox" />
-          <div class="burger-menu__screen burger-menu__screen--second">
-            <div class="menu-item">Наши услуги в Fit-Out</div>
-            <div class="menu-item">Наша экспертиза в ИТ</div>
-            <div class="menu-item">Ключевые проекты</div>
-            <div class="menu-item">Получить консультацию</div>
-          </div>
-          <div class="burger-menu__screen burger-menu__screen--first">
-            <div class="menu-item">
-              <a href="tel:+74959676657">+7 (495) 967 66 57</a>
-            </div>
-            <div class="menu-item">
-              <a href="mailto:marketing_it@lanit.ru">marketing_it@lanit.ru</a>
-            </div>
-          </div>
-          <div class="burger-menu__btn">
-            <label class="checkbox-label" for="burgerButton"></label>
-          </div>
-        </div>
-      </header>
-    </section>
-    <div class="siteHeader">
-      <div class="h1">Создаем<br />технологичные<br />пространства</div>
-      <div class="h2">для вашего бизнеса</div>
+    <div class="mainHeaderContainer">
       <div class="button-know-more">
         <a href="javascript:void(0);">Узнать больше</a>
       </div>
-      <div class="siteHeader__image">
-        <img src="/img/top-bg-building.png" alt="" />
+      <section class="head">
+        <header class="header">
+          <div class="logo">
+            <img src="/img/logo-top.svg" alt="Ланит-Интеграция лого" />
+          </div>
+          <div class="mobile-menu__btn">
+            <label class="checkbox-label" for="burgerButtonMobile"></label>
+          </div>
+          <input
+            class="checkbox-menu-mobile"
+            id="burgerButtonMobile"
+            type="checkbox"
+          />
+          <div class="burger-menu">
+            <input class="checkbox-menu" id="burgerButton" type="checkbox" />
+            <div class="burger-menu__screen burger-menu__screen--second">
+              <div class="menu-item">Наши услуги в Fit-Out</div>
+              <div class="menu-item">Наша экспертиза в ИТ</div>
+              <div class="menu-item">Ключевые проекты</div>
+              <div class="menu-item">Получить консультацию</div>
+            </div>
+            <div class="burger-menu__screen burger-menu__screen--first">
+              <div class="menu-item">
+                <a href="tel:+74959676657">+7 (495) 967 66 57</a>
+              </div>
+              <div class="menu-item">
+                <a href="mailto:marketing_it@lanit.ru">marketing_it@lanit.ru</a>
+              </div>
+            </div>
+            <div class="burger-menu__btn">
+              <label class="checkbox-label" for="burgerButton"></label>
+            </div>
+          </div>
+        </header>
+      </section>
+      <div class="siteHeader">
+        <div class="h1">Создаем<br />технологичные<br />пространства</div>
+        <div class="h2">для вашего бизнеса</div>
+
+        <!-- <div class="siteHeader__image"> -->
+        <!-- <img src="/img/top-bg-building.png" alt="" /> -->
+        <!--</div>-->
       </div>
     </div>
+
     <div class="container">
       <section class="company-description-short">
         <div class="description">
@@ -99,28 +103,29 @@
         </div>
         <div style="clear: both"></div>
       </section>
-      <section class="turnkey-office">
-        <div class="h2">Современный офис «под ключ»</div>
-        <div class="description">
-          <p>
-            Управляем проектом в формате Design&Build. Выполняем функции
-            генерального проектировщика и подрядчика, предлагая полный комплекс
-            работ: от разработки концепции, до гарантийного обслуживания
-            объекта. И главное – мы полностью отвечаем за сроки проекта, его
-            бюджет и качество.
-          </p>
-          <p>
-            Наша команда насчитывает несколько сотен специалистов. Это позволяет
-            нам реализовывать масштабные проекты с минимальными привлечением
-            субподрядных организаций.
-          </p>
-        </div>
-        <div class="turnkey-office__img">
-          <img src="/img/bg-turnkey-office.png" alt="" />
-        </div>
-        <div class="corner-bottom-right-red"></div>
-      </section>
-
+    </div>
+    <section class="turnkey-office">
+      <div class="h2">Современный офис «под ключ»</div>
+      <div class="description">
+        <p>
+          Управляем проектом в формате Design&Build. Выполняем функции
+          генерального проектировщика и подрядчика, предлагая полный комплекс
+          работ: от разработки концепции, до гарантийного обслуживания объекта.
+          И главное – мы полностью отвечаем за сроки проекта, его бюджет и
+          качество.
+        </p>
+        <p>
+          Наша команда насчитывает несколько сотен специалистов. Это позволяет
+          нам реализовывать масштабные проекты с минимальными привлечением
+          субподрядных организаций.
+        </p>
+      </div>
+      <div class="turnkey-office__img">
+        <img src="/img/bg-turnkey-office.png" alt="" />
+      </div>
+      <div class="corner-bottom-right-red"></div>
+    </section>
+    <div class="container">
       <section class="about-blocks">
         <div class="description active">
           <div class="description__text">
@@ -205,12 +210,15 @@
       <div class="info-blocks active-first">
         <div class="info-block" data-id="1">
           <div class="text">Интеллектуальный офис</div>
+          <div class="number">1</div>
         </div>
         <div class="info-block" data-id="2">
           <div class="text">Мультимедиа</div>
+          <div class="number">2</div>
         </div>
         <div class="info-block" data-id="3">
           <div class="text">Сетевые решения</div>
+          <div class="number">3</div>
         </div>
         <div class="info-block info-block-right">
           <div class="img"></div>
@@ -317,260 +325,258 @@
       </section>
     </div> -->
 
-    <div class="container">
-      <section class="projects">
-        <div class="left-column">
-          <div class="projects__title">КЛЮЧЕВЫЕ ПРОЕКТЫ</div>
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Штаб-квартира и VIP-офис крупнейшей финансовой группы России
-              </div>
-              <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
-              </div>
+    <section class="projects">
+      <div class="left-column">
+        <div class="projects__title">КЛЮЧЕВЫЕ ПРОЕКТЫ</div>
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Штаб-квартира и VIP-офис крупнейшей финансовой группы России
             </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Штаб-квартира <br />
-                и VIP-офис крупнейшей финансовой группы России
-              </div>
-              <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 110 600 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
-                      подрядчик и предложила архитектурные и конструктивные
-                      решения, провела строительно-монтажные и отделочные
-                      работы, установила уникальные арт-инсталляции и внедрила
-                      более 85 инженерных и ИТ-систем
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
+            <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
             </div>
           </div>
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Новый офис крупнейшей финансовой <br />
-                группы России
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Штаб-квартира <br />
+              и VIP-офис крупнейшей финансовой группы России
+            </div>
+            <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 110 600 м²</li>
+                </ul>
               </div>
-              <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
+                    подрядчик и предложила архитектурные и конструктивные
+                    решения, провела строительно-монтажные и отделочные работы,
+                    установила уникальные арт-инсталляции и внедрила более 85
+                    инженерных и ИТ-систем
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Новый офис крупнейшей финансовой группы России
-              </div>
-              <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 9 200 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
-                      подрядчик, предложив архитектурные и конструктивные
-                      решения, провела строительно-монтажные и отделочные
-                      работы, внедрила полный комплекс инженерных и ИТ-систем.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
-            </div>
-          </div>
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Новое здание <br />
-                ведущего художественного музея России
-              </div>
-              <div class="front-side__subtitle"></div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
-              </div>
-            </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Новое здание ведущего художественного музея России
-              </div>
-              <div class="back-side__subtitle"></div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 35 000 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
-                      подрядчик: провела общестроительные и отделочные работы,
-                      внедрила полный комплекс инженерных и ИТ-систем, а также
-                      провела благоустройство территории.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
             </div>
           </div>
         </div>
-        <div class="right-column">
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Штаб-квартира глобальной нефтегазовой компании
-              </div>
-              <div class="front-side__subtitle"></div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
-              </div>
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Новый офис крупнейшей финансовой <br />
+              группы России
             </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Штаб-квартира глобальной нефтегазовой компании
-              </div>
-              <div class="back-side__subtitle"></div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 59 000 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
-                      подрядчик, предложив архитектурные и конструктивные
-                      решения, провела строительно-монтажные и отделочные
-                      работы, внедрила полный комплекс инженерных и ИТ-систем.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
+            <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
             </div>
           </div>
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Штаб-квартира ведущего банка <br />
-                России
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Новый офис крупнейшей финансовой группы России
+            </div>
+            <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 9 200 м²</li>
+                </ul>
               </div>
-              <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
+                    подрядчик, предложив архитектурные и конструктивные решения,
+                    провела строительно-монтажные и отделочные работы, внедрила
+                    полный комплекс инженерных и ИТ-систем.
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Штаб-квартира ведущего банка России
-              </div>
-              <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 57 000 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: ЛАНИТ-Интеграция создала офис класса «А»
-                      под ключ: разработала проектную документацию, провела
-                      общестроительные и отделочные работы, создала комплекс
-                      инженерных и ИТ-систем здания.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
-            </div>
-          </div>
-          <div class="projects__card">
-            <div class="front-side">
-              <div class="front-side__square"></div>
-              <div class="front-side__title">
-                Офисное <br />
-                пространство Правительства субъекта РФ
-              </div>
-              <div class="front-side__subtitle"></div>
-              <div class="front-side__arrow">
-                <div class="text">Подробнее</div>
-                <img src="/img/arrow_right.png" alt="arrow" />
-              </div>
-            </div>
-            <div class="back-side">
-              <div class="back-side__rectangle"></div>
-              <div class="back-side__title">
-                Офисное пространство Правительства субъекта РФ
-              </div>
-              <div class="back-side__subtitle"></div>
-              <div class="back-side__features">
-                <div class="feature-square">
-                  <ul>
-                    <li>Площадь работ: 30 000 м²</li>
-                  </ul>
-                </div>
-                <div class="feature-work">
-                  <ul>
-                    <li>
-                      Комплекс работ: Проектирование и монтаж систем
-                      безопасности здания, включая специализированные сети
-                      передачи данных, а также дата-центр.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="back-side__arrow">
-                <img src="/img/arrow_left.png" alt="arrow" />
-              </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
             </div>
           </div>
         </div>
-      </section>
-    </div>
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Новое здание <br />
+              ведущего художественного музея России
+            </div>
+            <div class="front-side__subtitle"></div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
+            </div>
+          </div>
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Новое здание ведущего художественного музея России
+            </div>
+            <div class="back-side__subtitle"></div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 35 000 м²</li>
+                </ul>
+              </div>
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
+                    подрядчик: провела общестроительные и отделочные работы,
+                    внедрила полный комплекс инженерных и ИТ-систем, а также
+                    провела благоустройство территории.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Штаб-квартира глобальной нефтегазовой компании
+            </div>
+            <div class="front-side__subtitle"></div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
+            </div>
+          </div>
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Штаб-квартира глобальной нефтегазовой компании
+            </div>
+            <div class="back-side__subtitle"></div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 59 000 м²</li>
+                </ul>
+              </div>
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: ЛАНИТ-Интеграция выступила как генеральный
+                    подрядчик, предложив архитектурные и конструктивные решения,
+                    провела строительно-монтажные и отделочные работы, внедрила
+                    полный комплекс инженерных и ИТ-систем.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
+            </div>
+          </div>
+        </div>
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Штаб-квартира ведущего банка <br />
+              России
+            </div>
+            <div class="front-side__subtitle">в ММДЦ «Москва-Сити»</div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
+            </div>
+          </div>
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Штаб-квартира ведущего банка России
+            </div>
+            <div class="back-side__subtitle">(в ММДЦ «Москва-Сити»)</div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 57 000 м²</li>
+                </ul>
+              </div>
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: ЛАНИТ-Интеграция создала офис класса «А» под
+                    ключ: разработала проектную документацию, провела
+                    общестроительные и отделочные работы, создала комплекс
+                    инженерных и ИТ-систем здания.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
+            </div>
+          </div>
+        </div>
+        <div class="projects__card">
+          <div class="front-side">
+            <div class="front-side__square"></div>
+            <div class="front-side__title">
+              Офисное <br />
+              пространство Правительства субъекта РФ
+            </div>
+            <div class="front-side__subtitle"></div>
+            <div class="front-side__arrow">
+              <div class="text">Подробнее</div>
+              <img src="/img/arrow_right.png" alt="arrow" />
+            </div>
+          </div>
+          <div class="back-side">
+            <div class="back-side__rectangle"></div>
+            <div class="back-side__title">
+              Офисное пространство Правительства субъекта РФ
+            </div>
+            <div class="back-side__subtitle"></div>
+            <div class="back-side__features">
+              <div class="feature-square">
+                <ul>
+                  <li>Площадь работ: 30 000 м²</li>
+                </ul>
+              </div>
+              <div class="feature-work">
+                <ul>
+                  <li>
+                    Комплекс работ: Проектирование и монтаж систем безопасности
+                    здания, включая специализированные сети передачи данных, а
+                    также дата-центр.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="back-side__arrow">
+              <img src="/img/arrow_left.png" alt="arrow" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="container">
       <section class="form">
