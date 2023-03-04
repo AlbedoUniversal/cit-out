@@ -721,13 +721,14 @@ section.turnkey-office div.corner-bottom-right-red {
 
   height: 30%;
   margin-right: 1px;
-  bottom: RelativeSize(-45);
+  bottom: RelativeSize(-15);
   right: 0px;
   background: #ca103d;
   z-index: 1;
   @media (max-width: 900px) {
     left: initial;
     width: 100%;
+    bottom: RelativeSize(-35);
   }
 }
 //   section.turnkey-office div.corner-bottom-right-red img {
@@ -1824,8 +1825,8 @@ section.effective-it-decisions
 
     .error {
       position: absolute;
-      bottom: RelativeSize(8);
-      left: RelativeSize(59);
+      bottom: RelativeSize(4);
+      left: RelativeSize(62);
       font-family: "SF UI Display", sans-serif;
       font-style: normal;
       font-weight: 500;
@@ -1991,6 +1992,24 @@ section.effective-it-decisions
         width: 100%;
         padding: RelativeSizeMob(10) RelativeSizeMob(20);
       }
+    }
+  }
+  &__success {
+    display: none;
+    width: 100%;
+    font-family: "RadiateSans-BoldExpanded", sans-serif;
+    font-weight: 400;
+    font-size: RelativeSize(45);
+    line-height: 162%;
+    margin-top: calc(RelativeSize(90) * 2.5);
+    margin-bottom: RelativeSizeMob(100);
+    @media (max-width: 900px) {
+      font-size: RelativeSizeMob(25);
+      margin-bottom: RelativeSizeMob(100);
+    }
+    .text {
+      width: fit-content;
+      margin: auto;
     }
   }
 }

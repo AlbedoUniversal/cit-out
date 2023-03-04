@@ -737,7 +737,7 @@ section.turnkey-office div.corner-bottom-right-red {
   left: 5.6770833333vw;
   height: 30%;
   margin-right: 1px;
-  bottom: -2.34375vw;
+  bottom: -0.78125vw;
   right: 0px;
   background: #ca103d;
   z-index: 1;
@@ -746,6 +746,7 @@ section.turnkey-office div.corner-bottom-right-red {
   section.turnkey-office div.corner-bottom-right-red {
     left: initial;
     width: 100%;
+    bottom: -1.8229166667vw;
   }
 }
 
@@ -1792,8 +1793,8 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
 }
 .form__content .error {
   position: absolute;
-  bottom: 0.4166666667vw;
-  left: 3.0729166667vw;
+  bottom: 0.2083333333vw;
+  left: 3.2291666667vw;
   font-family: "SF UI Display", sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -1966,6 +1967,26 @@ section.effective-it-decisions > div.info-blocks.active-third div.info-block:nth
     width: 100%;
     padding: 1.3888888889vw 2.7777777778vw;
   }
+}
+.form__success {
+  display: none;
+  width: 100%;
+  font-family: "RadiateSans-BoldExpanded", sans-serif;
+  font-weight: 400;
+  font-size: 2.34375vw;
+  line-height: 162%;
+  margin-top: 11.71875vw;
+  margin-bottom: 13.8888888889vw;
+}
+@media (max-width: 900px) {
+  .form__success {
+    font-size: 3.4722222222vw;
+    margin-bottom: 13.8888888889vw;
+  }
+}
+.form__success .text {
+  width: fit-content;
+  margin: auto;
 }
 
 .footer {
